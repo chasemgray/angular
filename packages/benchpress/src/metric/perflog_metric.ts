@@ -278,6 +278,7 @@ export class PerflogMetric extends Metric {
         result['requestCount'] += 1;
       } else if (this._receivedData && name === 'receivedData' && ph === 'I') {
         result['receivedData'] += event['args'] !['encodedDataLength'] !;
+        console.log(event);
       }
       if (ph === 'B' && name === _MARK_NAME_FRAME_CAPTURE) {
         if (frameCaptureStartEvent) {
